@@ -1,0 +1,105 @@
+html{
+    font-size: 62.5%;
+
+    *{
+        outline: none !important;
+        &:focus{
+            outline: none !important;
+        }
+    }
+    body{
+        font-family: 'roboto-regular', Arial, Helvetica, sans-serif;font-size: 1.4rem;
+        color: #{map-get($couleurs, black34)}; background-color: #{map-get($couleurs, black82)};
+        @for $i from 1 through 6{
+            h#{$i},
+            .h#{$i}-like{
+                font-family: roboto-bold, Arial, Helvetica, sans-serif;
+                font-weight: normal;
+            }
+        }
+
+        .bold, strong{
+            font-weight: normal;
+            font-family: roboto-bold;
+
+            em, i, .italic, .i, .em{
+                font-style: normal;
+                font-family: roboto-bolditalic;
+            }
+        }
+
+        em, i, .italic, .i, .em{
+            font-style: normal;
+            font-family: roboto-italic;
+
+            .bold, strong{
+                font-weight: normal;
+                font-family: roboto-bolditalic;
+            }
+        }
+
+        button{
+
+        }
+
+        a{
+            img{
+                border: none;
+            }
+
+            &.button{
+                transition: all $speed $easin;
+                font-size: 1.4rem;text-decoration: none;text-transform: uppercase;text-align: center;
+                color: #{map-get($couleurs, black34)}; background-color: #{map-get($couleurs, black82)};
+                padding: 1.4rem 0; display: block;
+
+                &:hover{
+                    color: #{map-get($couleurs, black82)}; background-color: #{map-get($couleurs, white)};
+                }
+            }
+        }
+
+        nav{
+            ul{
+                margin: 0 !important;padding: 0 !important;
+            }
+        }
+
+        header{
+            color: #{map-get($couleurs, dark-yellow)}; background-color: #{map-get($couleurs, yellow)};
+            box-shadow: .2rem .2rem 1rem #{map-get($couleurs, black)};
+            position: fixed; top: 0;bottom: 0;left: 0;z-index: 500;
+            width: 35rem;height: 100%;padding: 3.5rem;
+            display: flex;flex-direction: column;justify-content: space-between;
+
+            #logo-confbox, #logo-creative{
+                text-align: center;display: block;
+                img{
+                    width: 11rem;
+                }
+            }
+
+            nav{
+                &.home{
+                    ul{
+                       list-style: none;
+
+                       li{
+                           &:first-child{
+                               margin-bottom: 1.5rem;
+                           }
+                       }
+                   }
+                }
+            }
+        }
+
+        main{
+            img{
+                display:block;position: absolute;top: 0;left: 0;
+                width:100%; height:100%;
+                object-fit: cover;
+            }
+        }
+    }
+}

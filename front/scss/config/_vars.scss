@@ -1,0 +1,40 @@
+$couleurs : (
+    yellow          : #fec107,
+    dark-yellow     : #4c421c,
+    black34         : #a5a3a8,
+    black77         : #37353a,
+    black82         : #2e292f,
+    // general
+    white           : #fcfcfc,
+    black           : #070707,
+    turquoise       : #1abc9c,
+    green-sea       : #16a085,
+    emerald         : #2ecc71,
+    nephritis       : #27ae60,
+    peter-river     : #3498db,
+    belize-hole     : #2980b9,
+    amethist        : #9b59b6,
+    wisteria        : #8e44ad,
+    wet-asphalt     : #34495e,
+    midnight-blue   : #2c3e50,
+    sun-flower      : #f1c40f,
+    orange          : #f39c12,
+    carrot          : #e67e22,
+    pumpkin         : #d35400,
+    alizarin        : #e74c3c,
+    pomegranate     : #c0392b,
+    clouds          : #ecf0f1,
+    silver          : #bdc3c7,
+    concrete        : #95a5a6,
+    asbetos         : #7f8c8d,
+);
+
+$fonts : (
+    //fontawesome-webfont                 : fontawesome-webfont,
+    roboto-bolditalic                   : Roboto-BoldItalic-webfont,
+    roboto-bold                         : Roboto-Bold-webfont,
+    roboto-italic                       : Roboto-Italic-webfont,
+    roboto-regular                      : Roboto-Regular-webfont,
+);
+$speed : 400ms;
+$easin : cubic-bezier(0.770, 0.000, 0.175, 1.000);
