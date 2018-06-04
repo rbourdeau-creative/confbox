@@ -36,7 +36,7 @@
     <body id="{% block bodyId %}{% endblock %}">
         {% block content %}{% endblock %}
 
-        <script src="{{ base_url() }}/js/main.js"></script>
+        <script src="{{ base_url() }}/js/min.js"></script>
 
         {% if config.google_analytics_id is defined and config.google_analytics_id %}
         <script>

@@ -1,5 +1,0 @@
-class Main(){
-
-}
-
-export { Main };
