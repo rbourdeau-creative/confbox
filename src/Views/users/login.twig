@@ -1,0 +1,12 @@
+{% extends "layouts/main.twig" %}
+
+{% block bodyId %}login{% endblock %}
+{% block metaTitle %}Se connecter{% endblock %}
+
+{% block content %}
+{% include 'elements/header-home.twig' %}
+<main>
+    {% include 'elements/layers/form-login.twig' %}
+</main>
+{% include 'elements/footer.twig' %}
+{% endblock %}

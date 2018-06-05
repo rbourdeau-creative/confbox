@@ -15,6 +15,8 @@
 - Gruntjs
 - node 10.0
 - npm 5.6
+- Ruby
+- ruby-sass (gem install sass ou installer le paquet ruby-sass depuis votre dépôt)
 
 
 ## vhost
@@ -25,7 +27,7 @@ Sur Unix, éditer le fichier /etc/hosts en ajoutant une ligne avec le dns :
 127.0.1.1	confbox.test
 ```
 
-faites un ping au cas où sur ce dns afin de vérifier que vous récupérez bien des paquets. Ensuite, editer un fichier dans /etc/apache2/sites-available. Nomez le comme le dns nouvellement créé avec une extension complémentaire .conf (confbox.test.conf). Placez y le code ci-dessous :
+faites un ping au cas où sur ce dns afin de vérifier que vous récupérez bien des paquets. Ensuite, éditer un fichier dans /etc/apache2/sites-available. Nomez le comme le dns nouvellement créé avec une extension complémentaire .conf (confbox.test.conf). Placez y le code ci-dessous :
 
 ```
 <VirtualHost *:80>
@@ -50,6 +52,13 @@ faites un ping au cas où sur ce dns afin de vérifier que vous récupérez bien
 ```
 
 Pour CustomLog, ErrorLog, DocumentRoot et directory, paramétrez les bons chemins suivant votre configuration.
+
+Aussi, n'oubliez pas de recharger Apache afin qu'il prenne en compte votre configuration :
+
+```
+sudo a2ensite confbox.test.conf && sudo systemctl reload apache2
+```
+
 
 ## vhost windows
 
@@ -94,3 +103,6 @@ Ajouter le nom de l'hôte dans le fichier le fichier C:\Windows\System32\drivers
 127.0.0.1	confbox.test
 ::1	confbox.test
 ```
+
+
+
