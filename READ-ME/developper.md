@@ -58,3 +58,51 @@ Aussi, n'oubliez pas de recharger Apache afin qu'il prenne en compte votre confi
 ```
 sudo a2ensite confbox.test.conf && sudo systemctl reload apache2
 ```
+
+
+## vhost windows
+
+Modifier le C:\wamp64\bin\apache\apache2.4.23\conf\extra\httpd-vhosts.conf comme ci-dessous
+
+```
+<VirtualHost *:80>
+	#Nom de domaine
+	ServerName confbox.test
+	#On accepte aussi le www
+	ServerAlias www.confbox.test
+	#Log d'erreur
+	ErrorLog C:/confbox/var/log/error.log
+	#logs de connexion
+	CustomLog C:/confbox/var/log/access.log common
+	#Racine des sources
+	DocumentRoot "C:/confbox/public/"
+	
+	<Directory  "C:/confbox/public/">
+		Options +Indexes +Includes +FollowSymLinks +MultiViews
+		AllowOverride All
+		Require all granted
+	</Directory>
+
+</VirtualHost>
+```
+
+Dans le fichier C:\wamp64\bin\apache\apache2.4.23\conf\httpd.conf
+
+Chercher la balise <Directory /> et la modifier comme ci-dessous, si ce n'est pas déjà le cas
+
+```
+<Directory />
+    AllowOverride All
+    Require all granted
+</Directory>
+```
+
+Ajouter le nom de l'hôte dans le fichier le fichier C:\Windows\System32\drivers\etc\hosts
+
+```
+127.0.0.1	confbox.test
+::1	confbox.test
+```
+
+
+
