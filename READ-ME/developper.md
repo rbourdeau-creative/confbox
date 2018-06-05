@@ -50,3 +50,47 @@ faites un ping au cas où sur ce dns afin de vérifier que vous récupérez bien
 ```
 
 Pour CustomLog, ErrorLog, DocumentRoot et directory, paramétrez les bons chemins suivant votre configuration.
+
+## vhost windows
+
+Modifier le C:\wamp64\bin\apache\apache2.4.23\conf\extra\httpd-vhosts.conf comme ci-dessous
+
+```
+<VirtualHost *:80>
+	#Nom de domaine
+	ServerName confbox.test
+	#On accepte aussi le www
+	ServerAlias www.confbox.test
+	#Log d'erreur
+	ErrorLog C:/confbox/var/log/error.log
+	#logs de connexion
+	CustomLog C:/confbox/var/log/access.log common
+	#Racine des sources
+	DocumentRoot "C:/confbox/public/"
+	
+	<Directory  "C:/confbox/public/">
+		Options +Indexes +Includes +FollowSymLinks +MultiViews
+		AllowOverride All
+		Require all granted
+	</Directory>
+
+</VirtualHost>
+```
+
+Dans le fichier C:\wamp64\bin\apache\apache2.4.23\conf\httpd.conf
+
+Chercher la balise <Directory /> et la modifier comme ci-dessous, si ce n'est pas déjà le cas
+
+```
+<Directory />
+    AllowOverride All
+    Require all granted
+</Directory>
+```
+
+Ajouter le nom de l'hôte dans le fichier le fichier C:\Windows\System32\drivers\etc\hosts
+
+```
+127.0.0.1	confbox.test
+::1	confbox.test
+```
