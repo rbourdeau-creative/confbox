@@ -1,0 +1,12 @@
+{% extends "layouts/main.twig" %}
+
+{% block bodyId %}addUser{% endblock %}
+{% block metaTitle %}s'inscrire{% endblock %}
+
+{% block content %}
+{% include 'elements/header-home.twig' %}
+<main>
+    {% include 'elements/layers/form-register.twig' %}
+</main>
+{% include 'elements/footer.twig' %}
+{% endblock %}

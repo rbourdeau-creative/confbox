@@ -1,7 +1,9 @@
 <?php
 
-$app->get('/', 'App\Controllers\FrontController:home')->setName('home');
-$app->get('/{name:[a-z]+}', 'App\Controllers\FrontController:show')->setName('show');
+$app->get('/', 'App\Controllers\PagesController:home')->setName('home');
+$app->get('/{name:[a-z]+}', 'App\Controllers\PagesController:show')->setName('show');
+
+$app->map(['GET', 'POST'], '/utilisateurs/s-inscrire', 'App\Controllers\UsersController:edit')->setName('editUser');
 
 // Page not found handler
 $container['notFoundHandler'] = function ($container) {
