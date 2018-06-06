@@ -3,7 +3,7 @@ build.xml
 config/development/*
 config/production/*
 vendor/**
-# var/cache/config/*
+var/cache/config/*.json
 var/cache/twig/**/*
 *.log
 node_modules
