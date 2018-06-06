@@ -1,3 +1,25 @@
 <form action="{{ path_for('loginUser') }}" method="POST" id="formLogin">
-    
+    <fieldset>
+        <legend>Se connecter</legend>
+        <div class="grid-2 has-gutter">
+            <div class="input text require">
+                <label for="email">E-mail</label>
+                <div class="wrap-input focus">
+                    <input type="text" placeholder="E-mail" autofocus name="email" id="email">
+                </div>
+            </div>
+            <div class="input password require">
+                <label for="password">Mot de passe</label>
+                <div class="wrap-input">
+                    <input type="password" placeholder="Mot de passe" name="password" id="password">
+                </div>
+            </div>
+        </div>
+        <div class="grid-2 has-gutter">
+            <p><a href="{{ path_for('forgottenPassword') }}" class="italic">mot de passe oublié ?</a></p>
+            <div class="div submit">
+                <input type="submit" name="login" class="button" value="se connecter">
+            </div>
+        </div>
+    </fieldset>
 </form>

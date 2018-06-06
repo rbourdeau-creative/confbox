@@ -4,6 +4,7 @@ $couleurs : (
     black34         : #a5a3a8,
     black77         : #37353a,
     black82         : #2e292f,
+    red             : #ff2a2a,
     // general
     white           : #fcfcfc,
     black           : #070707,
@@ -30,7 +31,7 @@ $couleurs : (
 );
 
 $fonts : (
-    //fontawesome-webfont                 : fontawesome-webfont,
+    fontawesome                         : fa-regular-400,
     roboto-bolditalic                   : Roboto-BoldItalic-webfont,
     roboto-bold                         : Roboto-Bold-webfont,
     roboto-italic                       : Roboto-Italic-webfont,

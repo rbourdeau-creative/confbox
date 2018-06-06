@@ -38,23 +38,134 @@ html{
             }
         }
 
+        form{
+            input{
+                cursor: pointer;
+            }
+            fieldset{
+                legend{
+                    font-size: 2.2rem;
+                }
+                .note{
+                    font-size: 1rem;text-align: right;font-family: roboto-italic;
+                    color: #{map-get($couleurs, red)};
+
+                    &:before{
+                        content:'* ';
+                    }
+                }
+                .input{
+                    margin-top: 2.5rem;
+                    &.text, &.password{
+                        label{
+                            display: none;
+                        }
+                        .wrap-input{
+                            border-bottom: .1rem solid #{map-get($couleurs, black34)};
+                            position: relative;
+
+
+                            &.require{
+                                &:before{
+                                    content:"*";color: #{map-get($couleurs, red)};
+                                    position: absolute;right: .5rem;top: 50%;transform: translateY(-50%);
+                                }
+                            }
+
+                            &:after{
+                                content:"";
+                                position: absolute;bottom: -.1rem;left: 50%;transform: translateX(-50%);
+                                border-bottom: .2rem solid #{map-get($couleurs, yellow)};
+                                display: block;width: 0%;
+                                transition: all $speed $easin;
+                            }
+
+                            &.focus{
+                                &:after{
+                                    width: 100%;left: 0;transform: none;
+                                }
+                            }
+
+
+                            input{
+                                border: none;background-color: transparent;
+                                padding: .5rem .8rem;width: 100%;display: block;
+                                color: #{map-get($couleurs, white)};
+
+                                &::placeholder{
+                                    color: #{map-get($couleurs, white)};
+                                    font-family: roboto-italic;
+                                }
+
+                            }
+                        }
+                    }
+
+                    &.radio{
+                        input{
+                            visibility: hidden;position: absolute;
+
+                            + label{
+                                &:before{
+                                    content:"\f111";
+                                    font-size: 1.6rem;font-family: fontawesome;
+                                    color: #{map-get($couleurs, yellow)};margin-right: .5rem;
+                                }
+                            }
+
+                            &:checked{
+                                + label{
+                                    &:before{
+                                        content:"\f192";
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+
         button{
 
         }
 
         a{
+            color: #{map-get($couleurs, black34)};
+            @media screen and (min-width: 961px) {
+                &:hover{
+                    text-decoration: none;
+                }
+            }
+
             img{
                 border: none;
             }
 
-            &.button{
-                transition: all $speed $easin;
-                font-size: 1.4rem;text-decoration: none;text-transform: uppercase;text-align: center;
+        }
+        .button{
+            transition: all $speed $easin;border: none;text-decoration: none;
+            margin: 0;padding: 1.4rem 0;
+            font-size: 1.4rem;text-transform: uppercase;text-align: center;
+            display: block;width: 100%;
+            &.dark{
                 color: #{map-get($couleurs, black34)}; background-color: #{map-get($couleurs, black82)};
-                padding: 1.4rem 0; display: block;
 
-                &:hover{
-                    color: #{map-get($couleurs, black82)}; background-color: #{map-get($couleurs, white)};
+                @media screen and (min-width: 961px) {
+                    &:hover{
+                        color: #{map-get($couleurs, black82)}; background-color: #{map-get($couleurs, white)};
+                    }
+                }
+            }
+
+            &.evident{
+                color: #{map-get($couleurs, black82)}; background-color: #{map-get($couleurs, yellow)};
+
+                @media screen and (min-width: 961px) {
+                    &:hover{
+                        color: #{map-get($couleurs, black82)}; background-color: #{map-get($couleurs, white)};
+                    }
                 }
             }
         }
@@ -76,8 +187,13 @@ html{
                 text-align: center;display: block;
 
                 > svg{
-                    width: 11rem;
-                    height: auto;
+                    width: 11rem;height: auto;
+
+                    &#logo-creative-header{
+                        .cls-1{
+                            fill:#{map-get($couleurs, dark-yellow)};
+                        }
+                    }
                 }
             }
 
@@ -139,7 +255,7 @@ html{
             background-color: #{map-get($couleurs, white)};
             transition: top $speed $easin, bottom $speed $easin;
             display: none;flex-direction: column;justify-content: space-between;
-            padding: 10rem 4rem 2.5rem;
+            padding: 10rem 0 2.5rem;
 
             &.visible{
                 top:0;bottom: 0;
@@ -148,21 +264,61 @@ html{
             .logo-creative{
                 text-align: center;
                 > svg{
-                    width: 25%;height: auto;
-                    fill: #{map-get($couleurs, black82)};
+                    width: 10rem;height: auto;
+                    .cls-1{
+                        fill:#{map-get($couleurs, black82)};
+                    }
                 }
             }
             @media screen and (max-width: 960px) {
                 display: flex;
+
+                ul{
+                    padding-top: 4rem !important;
+                    li{
+                        border-bottom: .1rem solid #{map-get($couleurs, black77)};
+                        a{
+                            font-size: 1.8rem;color: #{map-get($couleurs, black77)};
+                            display: block;padding: 1rem 4rem;text-decoration: none;
+                        }
+                    }
+                }
+
             }
 
         }
 
         main{
-            img{
-                display:block;position: absolute;top: 0;left: 0;
-                width:100%; height:100%;
-                object-fit: cover;
+            height: 100%;
+            overflow: auto;
+            margin: 0 0 0 35rem;padding: 2.5rem;
+            @media screen and (max-width: 960px) {
+                margin: 9.5rem 1.5rem 4.5rem;
+            }
+
+
+
+        }
+
+        > footer{
+            display: none;
+
+            @media screen and (max-width: 960px) {
+                display: block;
+                position: fixed;bottom: 1.5rem;left: 50%;transform: translateX(-50%);z-index: 200;
+
+                a{
+                    display: block;
+
+                    svg{
+                        width: 10rem;height: auto;
+
+                        .cls-1{
+                            fill:#{map-get($couleurs, white)};
+                        }
+
+                    }
+                }
             }
         }
     }

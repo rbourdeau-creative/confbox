@@ -1,7 +1,8 @@
 <form id="formAddUser" action="{{ path_for('editUser') }}" method="post">
     <fieldset>
         <legend>S'inscrire</legend>
-        <div class="grid-2">
+        <p class="note">Champs obligatoires</p>
+        <div class="grid-2 has-gutter">
             <div class="input radio">
                 <input type="radio" name="type" id="typePresenter" value="">
                 <label for="typePresenter">Présentateur</label>
@@ -11,7 +12,7 @@
                 <label for="typeParticipant">Participant</label>
             </div>
         </div>
-        <div class="grid-2">
+        <div class="grid-2 has-gutter">
             <div class="input radio">
                 <input type="radio" checked name="civilities" id="civMme" value="">
                 <label for="civMme">Madame</label>
@@ -21,44 +22,58 @@
                 <label for="civM">Monsieur</label>
             </div>
         </div>
-        <div class="grid-2">
+        <div class="grid-2 has-gutter">
             <div class="input text">
                 <label for="firstname">Prénom</label>
-                <input type="text" maxlength="50" name="firstname" id="firstname" value="">
+                <div class="wrap-input require">
+                    <input type="text" placeholder="Prénom" maxlength="50" name="firstname" id="firstname" value="">
+                </div>
             </div>
             <div class="input text">
                 <label for="lastname">Nom</label>
-                <input type="text" autofocus maxlength="50" name="lastname" id="lastname" value="">
+                <div class="wrap-input focus require">
+                    <input type="text" placeholder="Nom" autofocus maxlength="50" name="lastname" id="lastname" value="">
+                </div>
             </div>
         </div>
-        <div class="grid-2">
+        <div class="grid-2 has-gutter">
             <div class="input text">
                 <label for="company">Société</label>
-                <input type="text" maxlength="50" name="company" id="company" value="">
+                <div class="wrap-input">
+                    <input type="text" placeholder="Société" maxlength="50" name="company" id="company" value="">
+                </div>
             </div>
             <div class="input text">
                 <label for="occupation">Profession</label>
-                <input type="text" maxlength="50" name="occupation" id="occupation" value="">
+                <div class="wrap-input">
+                    <input type="text" placeholder="Profession" maxlength="50" name="occupation" id="occupation" value="">
+                </div>
             </div>
         </div>
-        <div class="grid-2">
-            <div class="input text">
+        <div class="grid-2 has-gutter">
+            <div class="input password">
                 <label for="company">Mot de passe</label>
-                <input type="text" maxlength="50" name="company" id="company" value="">
+                <div class="wrap-input require">
+                    <input type="password" placeholder="Mot de passe" maxlength="50" name="company" id="company" value="">
+                </div>
             </div>
-            <div class="input text">
+            <div class="input password">
                 <label for="occupation">Confirmation</label>
-                <input type="text" maxlength="50" name="occupation" id="occupation" value="">
+                <div class="wrap-input require">
+                    <input type="password" placeholder="Confirmation" maxlength="50" name="occupation" id="occupation" value="">
+                </div>
             </div>
         </div>
-        <div class="grid-2">
+        <div class="grid-2 has-gutter">
             <div class="input text">
                 {# non je n'utilise pas type email pour eviter de récupérer la validation navigateur #}
                 <label for="email">E-mail</label>
-                <input type="text" name="email" id="email" value="">
+                <div class="wrap-input require">
+                    <input type="text" placeholder="E-mail" name="email" id="email" value="">
+                </div>
             </div>
             <div class="input submit">
-                <input type="submit" name="register" value="s'inscrire">
+                <input type="submit" name="register" class="button" value="s'inscrire">
             </div>
         </div>
     </fieldset>

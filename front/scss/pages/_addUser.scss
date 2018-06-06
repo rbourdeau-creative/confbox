@@ -1,0 +1,10 @@
+#addUser{
+    form{
+        .note{
+            display: none;
+        }
+        .button{
+            color: #{map-get($couleurs, black82)}; background-color: #{map-get($couleurs, yellow)};
+        }
+    }
+}
