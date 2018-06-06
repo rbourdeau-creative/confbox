@@ -4,8 +4,8 @@ config/development/*
 config/production/*
 vendor/**
 # var/cache/config/*
-# var/cache/twig/*
-# var/log/*
+var/cache/twig/**
+*.log
 node_modules
 front/css/
 front/js/
