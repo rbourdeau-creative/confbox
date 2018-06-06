@@ -62,7 +62,7 @@ sudo a2ensite confbox.test.conf && sudo systemctl reload apache2
 
 ## vhost windows
 
-Modifier le C:\wamp64\bin\apache\apache2.4.23\conf\extra\httpd-vhosts.conf comme ci-dessous
+Modifier le fichier C:\wamp64\bin\apache\apache2.4.23\conf\extra\httpd-vhosts.conf comme ci-dessous
 
 ```
 <VirtualHost *:80>
@@ -88,7 +88,7 @@ Modifier le C:\wamp64\bin\apache\apache2.4.23\conf\extra\httpd-vhosts.conf comme
 
 Dans le fichier C:\wamp64\bin\apache\apache2.4.23\conf\httpd.conf
 
-Chercher la balise <Directory /> et la modifier comme ci-dessous, si ce n'est pas déjà le cas
+Chercher la balise Directory et la modifier comme ci-dessous, si ce n'est pas déjà le cas
 
 ```
 <Directory />
@@ -97,7 +97,7 @@ Chercher la balise <Directory /> et la modifier comme ci-dessous, si ce n'est pa
 </Directory>
 ```
 
-Ajouter le nom de l'hôte dans le fichier le fichier C:\Windows\System32\drivers\etc\hosts
+Ajouter le nom de l'hôte dans le fichier C:\Windows\System32\drivers\etc\hosts
 
 ```
 127.0.0.1	confbox.test
