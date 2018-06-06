@@ -76,7 +76,7 @@ Modifier le fichier C:\wamp64\bin\apache\apache2.4.23\conf\extra\httpd-vhosts.co
 	CustomLog C:/confbox/var/log/access.log common
 	#Racine des sources
 	DocumentRoot "C:/confbox/public/"
-	
+
 	<Directory  "C:/confbox/public/">
 		Options +Indexes +Includes +FollowSymLinks +MultiViews
 		AllowOverride All
@@ -104,5 +104,12 @@ Ajouter le nom de l'hôte dans le fichier C:\Windows\System32\drivers\etc\hosts
 ::1	confbox.test
 ```
 
+** note ** : Une fois que tout est installé. Vous pouvez avoir un petit message d'erreur :
 
+> file_put_contents(/var/www/confbox/var/cache/config/development.json): failed to open stream: Permission denied in
 
+Changer les droits sur ce dossier et d'une manière récursive
+
+```
+chmod -Rf var
+```
